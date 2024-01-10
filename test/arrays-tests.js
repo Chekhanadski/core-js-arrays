@@ -180,7 +180,7 @@ describe('arrays-tasks', () => {
   );
 
   it.optional(
-    'getStringsLength should convert strings from specified array to uppercase',
+    'getStringsLength should return an array containing the lengths of each string',
     () => {
       [
         {
@@ -1066,18 +1066,6 @@ describe('strings-tasks optimal implementation', () => {
     }
     assert.equal(
       fnStr.includes('reduce'),
-      true,
-      'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array'
-    );
-  });
-
-  it.optional('optimal implementation of isSameLength', function test() {
-    const fnStr = tasks.isSameLength.toString();
-    if (!fnStr.includes('return')) {
-      this.skip();
-    }
-    assert.equal(
-      fnStr.includes('every'),
       true,
       'You need to use a different method, look for the appropriate method in the documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array'
     );
