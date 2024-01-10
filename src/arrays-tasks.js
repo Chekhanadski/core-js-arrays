@@ -42,7 +42,14 @@ function getIntervalArray(start, end) {
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
 function sumArrays(arr1, arr2) {
-  const sumArr = arr1.map((elem, index) => elem + arr2[index]);
+  const maxArr = arr1.length >= arr2.length ? arr1 : arr2;
+  const minArr = maxArr !== arr2 ? arr2 : arr1;
+  const sumArr = maxArr.map((elem, index) => {
+    if (index < minArr.length) {
+      return elem + minArr[index];
+    }
+    return elem;
+  });
   return sumArr;
 }
 
