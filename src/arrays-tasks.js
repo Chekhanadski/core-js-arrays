@@ -134,8 +134,17 @@ function getStringsLength(arr) {
  *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
  *   getAverage([ 2, 3, 3 ])  => 2,67
  */
-function getAverage(/* arr */) {
-  throw new Error('Not implemented');
+function getAverage(arr) {
+  if (arr.length === 0) {
+    return 0;
+  }
+  const sumArr = arr.reduce((acc, item) => {
+    return acc + item;
+  }, 0);
+  const averageValueArr = sumArr / arr.length;
+  return Number.isInteger(averageValueArr)
+    ? averageValueArr
+    : +averageValueArr.toFixed(2);
 }
 
 /**
@@ -148,10 +157,12 @@ function getAverage(/* arr */) {
  *    isSameLength(['orange', 'banana', 'cherry']) => true
  *    isSameLength(['cat', 'dog', 'elephant']) => false
  */
-function isSameLength(/* arr */) {
-  throw new Error('Not implemented');
+function isSameLength(arr) {
+  if (arr.length === 0) {
+    return true;
+  }
+  return arr.every((elem) => elem.length === arr[0].length);
 }
-
 /**
  * Checks if there are elements in the array where the value is equal to its index.
  *
